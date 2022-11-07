@@ -2,7 +2,7 @@ import { Router } from "express";
 import { connection } from "../db";
 import { DB_TABLES } from "../db/types";
 import { ResultSetHeader } from "mysql2";
-import { findUserCredentials } from "../utils/login";
+import { getUserCredentialsByLoginData } from "../utils/user";
 
 const express = require('express');
 const router: Router = express.Router();
@@ -13,7 +13,7 @@ router.post("/", urlEncodedParser, (req, res) => {
     const { name, birthDate, countryId, sex, email, username, password } = req.body;
     let isRegistered = false;
 
-    findUserCredentials(username).then(user => {
+    getUserCredentialsByLoginData(username).then(user => {
         if (user) {
             res.status(409).send("User already registered");
             isRegistered = true;

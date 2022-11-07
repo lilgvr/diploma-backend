@@ -6,8 +6,15 @@ export type User = {
     birthDate: Date,
     countryId: number,
     sex: number,
-    token?: string
+    token?: string,
 } | RowDataPacket
+
+export enum Sex {
+    "Not known",
+    "Male",
+    "Female",
+    "Not applicable" = 9
+}
 
 /*
 Sex
