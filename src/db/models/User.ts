@@ -6,6 +6,7 @@ export type User = {
     birthDate: Date,
     countryId: number,
     sex: number,
+    token?: string
 } | RowDataPacket
 
 /*

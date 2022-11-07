@@ -7,19 +7,23 @@ const register = require('./routes/register');
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 app.set('view-engine', 'ejs');
+
+dotenv.config();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // MySQL
 openConnection();
 
 // CORS
 app.use(cors());
-
-// Login
-// app.use(passport.session());
 
 // Routes
 app.use("/", index);
