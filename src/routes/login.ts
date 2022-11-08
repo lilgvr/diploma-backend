@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { generateAccessToken } from "../utils/login";
-import { getUserById, getUserCredentialsByLoginData } from "../utils/user";
+import { generateAccessToken } from "../repository/login";
+import { getUserById, getUserCredentialsByLoginData } from "../repository/user";
 
 const express = require('express');
 const router: Router = express.Router();

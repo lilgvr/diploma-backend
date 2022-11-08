@@ -1,5 +1,5 @@
-import { USER_COLUMNS } from "./models/User";
-import { USER_CREDENTIALS_COLUMNS } from "./models/UserCredentials";
+import { USER_COLUMNS } from "../model/User";
+import { USER_CREDENTIALS_COLUMNS } from "../model/UserCredentials";
 
 export type DB_COLUMNS = USER_COLUMNS | USER_CREDENTIALS_COLUMNS;
 

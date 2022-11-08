@@ -1,7 +1,7 @@
 import { connection } from "../../db";
 import { DB_TABLES } from "../../db/types";
 import { RowDataPacket } from "mysql2";
-import { Poster } from "../../db/models/Poster";
+import { Poster } from "../../model/Poster";
 
 export const getPosterById = async (id: number): Promise<Poster> => {
     const poster = await connection.promise().query(

@@ -1,6 +1,6 @@
 import { connection } from "../../db";
 import { DB_TABLES } from "../../db/types";
-import { Genre } from "../../db/models/Genre";
+import { Genre } from "../../model/Genre";
 import { RowDataPacket } from "mysql2";
 
 export const getGenreById = async (id: number): Promise<Genre> => {

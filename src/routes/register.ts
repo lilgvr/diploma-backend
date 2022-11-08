@@ -2,7 +2,7 @@ import { Router } from "express";
 import { connection } from "../db";
 import { DB_TABLES } from "../db/types";
 import { ResultSetHeader } from "mysql2";
-import { getUserCredentialsByLoginData } from "../utils/user";
+import { getUserCredentialsByLoginData } from "../repository/user";
 
 const express = require('express');
 const router: Router = express.Router();
@@ -28,7 +28,7 @@ router.post("/", urlEncodedParser, (req, res) => {
 
             connection.query(
                 `INSERT INTO ${DB_TABLES.USERS} (name, birth_date, country_id, sex) VALUES (?,?,?,?)`,
-                [name, birthDate, countryId, sex],
+                [name, birthDate, +countryId, +sex],
                 (error, result: ResultSetHeader) => {
                     if (error) return connection.rollback(() => {
                         console.log(error.message);

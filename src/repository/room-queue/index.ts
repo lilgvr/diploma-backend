@@ -1,6 +1,6 @@
 import { connection } from "../../db";
 import { DB_TABLES } from "../../db/types";
-import { RoomQueue } from "../../db/models/RoomQueue";
+import { RoomQueue } from "../../model/RoomQueue";
 
 export const getRoomQueueByRoomId = async (roomId: number): Promise<RoomQueue[]> => {
     const roomQueue = await connection.promise().query(

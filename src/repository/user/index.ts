@@ -1,8 +1,8 @@
 import { connection } from "../../db";
 import { DB_TABLES } from "../../db/types";
 import { RowDataPacket } from "mysql2";
-import { UserCredentials } from "../../db/models/UserCredentials";
-import { User } from "../../db/models/User";
+import { UserCredentials } from "../../model/UserCredentials";
+import { User } from "../../model/User";
 
 export const getUserCredentialsByLoginData = async (loginData: string) => {
     let userCredentials;

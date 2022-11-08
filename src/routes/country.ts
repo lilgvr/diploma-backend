@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllCountries, getCountryById } from "../utils/countries";
+import { getAllCountries, getCountryById } from "../repository/countries";
 
 const express = require('express');
 const router: Router = express.Router();

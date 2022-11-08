@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { getRoomByTitle } from "../utils/room";
-import { authenticateToken } from "../utils/login";
+import { getRoomByTitle } from "../repository/room";
+import { authenticateToken } from "../repository/login";
 
 const express = require('express');
 const router: Router = express.Router();

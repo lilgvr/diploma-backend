@@ -1,6 +1,6 @@
 import { connection } from "../../db";
 import { DB_TABLES } from "../../db/types";
-import { Room } from "../../db/models/Room";
+import { Room } from "../../model/Room";
 
 export const getRoomByTitle = async (title: string): Promise<Room> => {
     const room = await connection.promise().query(
