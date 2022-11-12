@@ -1,7 +1,7 @@
 import { RowDataPacket } from "mysql2";
 
 export type User = {
-    id?: number,
+    id: number,
     name: string,
     birthDate: Date,
     countryId: number,

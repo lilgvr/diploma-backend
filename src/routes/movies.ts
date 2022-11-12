@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { getAllMovies, getMovieById, getMoviesByGenreId, getMoviesByYear, searchMovies } from "../repository/movies";
+import { addToFavorites } from "../repository/user-favorites";
+import { authenticateToken } from "../utils/login";
 
 const express = require('express');
 const router: Router = express.Router();
@@ -18,7 +20,7 @@ router.get('/all', (req, res) => {
         .catch(err => console.log(err));
 })
 
-router.get('/:id', (req, res) => {
+router.get('/movie/:id', (req, res) => {
     getMovieById(+req.params.id)
         .then(movie => res.send(movie))
         .catch(err => console.log(err));
@@ -39,5 +41,7 @@ router.get('/genre/:id', (req, res) => {
         .then(movies => res.send(movies))
         .catch(err => console.log(err));
 });
+
+router.post('/favorites/add', authenticateToken, addToFavorites);
 
 module.exports = router;

@@ -13,5 +13,7 @@ export enum DB_TABLES {
     ROOMS = "rooms",
     ROOM_QUEUE = "room_queue",
     ROOM_USERS = "room_users",
-    USER_FRIENDS = "user_friends"
+    USER_FRIENDS = "user_friends",
+    USER_FAVORITES = "user_favorites",
+    MOVIE_COMMENTS = "movie_comments"
 }

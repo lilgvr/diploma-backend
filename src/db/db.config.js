@@ -1,6 +1,7 @@
 module.exports = {
   host: 'localhost',
   database: 'diploma_db',
-  user: 'root',
-  password: '12345678',
+  user: 'diploma_user',
+  password: 'Diploma_password',
+  // password: "12345678",
 }

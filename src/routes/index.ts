@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { authenticateToken } from "../repository/login";
+import { authenticateToken } from "../utils/login";
 
 const express = require('express');
 const router: Router = express.Router();
