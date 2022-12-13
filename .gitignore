@@ -1,5 +1,4 @@
 node_modules
 build
 .env
-static
-src/db/db.config.js
+log

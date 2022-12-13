@@ -1,0 +1,19 @@
+{
+  "defaultEnv": "dev",
+  "dev": {
+    "host": {
+      "ENV": "HOST"
+    },
+    "user": {
+      "ENV": "USER"
+    },
+    "password": {
+      "ENV": "PASSWORD"
+    },
+    "database": {
+      "ENV": "DATABASE"
+    },
+    "driver": "mysql",
+    "multipleStatements": true
+  }
+}
