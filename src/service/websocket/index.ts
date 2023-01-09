@@ -5,7 +5,7 @@ export const webSocketServer = new WebSocket.Server({
     port: 8080
 });
 
-type Message = {
+/*type Message = {
     eventType: string,
     payload: {
         username: string,
@@ -26,4 +26,10 @@ export const dispatchEvent = (message: string, ws: WebSocket) => {
         default:
             ws.send((new Error("Wrong query")).message);
     }
+}*/
+
+// v.2
+
+export const setupWebsocketServer = ()=>{
+
 }

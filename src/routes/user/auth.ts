@@ -1,7 +1,7 @@
-import { loginUser, logout, register, updateRefreshToken } from "../../utils/auth";
+import { loginUser, logout, register, updateRefreshToken } from "../../service/auth";
 import express, { Router } from "express";
-import { getSession } from "../../utils/auth/session";
-import { deleteUser } from "../../utils/auth/delete";
+import { getSession } from "../../service/auth/session";
+import { deleteUser } from "../../service/auth/delete";
 import { authenticateToken } from "../../middleware";
 
 const router: Router = express.Router();

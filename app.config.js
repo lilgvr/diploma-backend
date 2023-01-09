@@ -1,5 +1,5 @@
 import path from "path";
-import { DateService } from "./src/utils/DateService";
+import { DateService } from "./src/service/DateService";
 
 module.exports = {
   PROJECT_ROOT: __dirname,
