@@ -8,6 +8,8 @@ import { router as indexRouter, useRoutes } from "./routes";
 import cache from "memory-cache";
 import cookieParser from 'cookie-parser';
 import rateLimit from "express-rate-limit";
+import http from 'http';
+import { setupWebsocketServer } from "./service/websocket";
 
 const { HOST, PORT } = process.env;
 const { CORS_CONFIG, PROJECT_ROOT, LIMITER_CONFIG } = require('../app.config');
@@ -15,6 +17,7 @@ const { CORS_CONFIG, PROJECT_ROOT, LIMITER_CONFIG } = require('../app.config');
 dotenv.config();
 
 export const app = express();
+export const server = http.createServer(app);
 
 // App configuration
 
@@ -39,11 +42,7 @@ app.on('exit', () => {
 })
 
 // WebSocket
-/*webSocketServer.on('connection', ws => {
-    ws.on('message', m => {
-        dispatchEvent(m.toString(), ws);
-    })
-})*/
+setupWebsocketServer(server);
 
 const start = async () => {
     try {
