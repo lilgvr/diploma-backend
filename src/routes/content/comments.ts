@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getCommentsByMovieId } from "../../repository/movie-comments";
+import { getCommentsByMovieId } from "../../repository/content/movie-comments";
 import express from "express";
 
 const router: Router = express.Router();

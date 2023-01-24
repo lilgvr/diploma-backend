@@ -14,19 +14,23 @@ const comments = require('./content/comments');
 const genres = require('./content/genres');
 const activate = require('./user/activate');
 const queue = require('./room/room-queue');
+const directors = require('./content/directors');
+const upload = require('./content/upload');
 
 export const useRoutes = () => {
-    app.use('/api/rooms', room);
-    app.use('/api/movies', movie);
-    app.use('/api/auth', login);
-    app.use('/api/countries', countries);
-    app.use('/api/room-users', roomUser);
-    app.use('/api/users', userRoute);
-    app.use('/api/friends', friends);
-    app.use('/api/comments', comments);
-    app.use('/api/genres', genres);
-    app.use('/api/activate', activate);
-    app.use('/api/queue', queue);
+    router.use('/rooms', room);
+    router.use('/movies', movie);
+    router.use('/auth', login);
+    router.use('/countries', countries);
+    router.use('/room-users', roomUser);
+    router.use('/users', userRoute);
+    router.use('/friends', friends);
+    router.use('/comments', comments);
+    router.use('/genres', genres);
+    router.use('/activate', activate);
+    router.use('/queue', queue);
+    router.use('/directors', directors);
+    router.use('/upload', upload);
 }
 
 router.get('/', (req, res) => {

@@ -1,6 +1,6 @@
-import { connection } from "../../db";
-import { DB_TABLES } from "../../db/types";
-import { Country } from "../../types/model/Country";
+import { connection } from "../../../db";
+import { DB_TABLES } from "../../../db/types";
+import { Country } from "../../../types/model/Country";
 
 export const getAllCountries = async (): Promise<Country[]> => {
     const countries = await connection.promise().query(

@@ -1,6 +1,6 @@
-import { connection } from "../../db";
-import { DB_TABLES } from "../../db/types";
-import { MovieComment } from "../../types/model/MovieComment";
+import { connection } from "../../../db";
+import { DB_TABLES } from "../../../db/types";
+import { MovieComment } from "../../../types/model/MovieComment";
 
 export const getCommentsByMovieId = async (movieId: number): Promise<MovieComment[]> => {
     const comments = await connection.promise().query(

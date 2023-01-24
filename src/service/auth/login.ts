@@ -8,6 +8,7 @@ import { DateService } from "../DateService";
 import { generateToken } from "./TokenService";
 import { jsonRes } from "../../types/JsonResponse";
 import { cookieOptions, expiresIn } from "./index";
+import { getUserRooms } from "../../repository/room-user";
 
 dotenv.config();
 
@@ -42,6 +43,7 @@ export const loginUser = async (req: Request, res: Response) => {
         )
 
         const user = await getUserById(user_id);
+        const rooms = await getUserRooms(user_id);
         const { id, birth_date, country_id, name, sex } = user;
         const authorizedUser: AuthorizedUser = {
             id,
@@ -51,6 +53,7 @@ export const loginUser = async (req: Request, res: Response) => {
             sex,
             email,
             username,
+            rooms
         }
 
         const loginDto: LoginDto = {

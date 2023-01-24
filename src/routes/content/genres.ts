@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllGenres, getGenreById, getGenresByMovieId } from "../../repository/genre";
+import { getAllGenres, getGenreById, getGenresByMovieId } from "../../repository/content/genre";
 import express from "express";
 
 const router: Router = express.Router();

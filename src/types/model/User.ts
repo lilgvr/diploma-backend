@@ -1,5 +1,6 @@
 import { RowDataPacket } from "mysql2";
 import { UserCredentials } from "./UserCredentials";
+import { Room } from "./Room";
 
 export type User = {
     id: number,
@@ -7,10 +8,13 @@ export type User = {
     birth_date: Date,
     country_id: number,
     sex: number,
-    activated: boolean
+    activated: boolean,
+    avatar_id: number
 } | RowDataPacket
 
-export type AuthorizedUser = Omit<User, "activated"> & Pick<UserCredentials, "email" | "username">
+export type AuthorizedUser =
+    Omit<User, "activated" | "avatar_id"> & Pick<UserCredentials, "email" | "username">
+    & { rooms: Room[] }
 
 export enum Sex {
     "Not known",

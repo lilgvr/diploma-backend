@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllMovies, getMovieById, getMoviesByGenreId, getMoviesByYear, searchMovies } from "../../repository/movies";
+import { getAllMovies, getMovieById, getMoviesByGenreId, getMoviesByYear, searchMovies } from "../../repository/content/movies";
 import { addToFavorites } from "../../repository/user-favorites";
 import express from "express";
 import { authenticateToken } from "../../middleware";
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         .catch(err => console.log(err));
 })
 
-router.get('/all', authenticateToken, (req, res) => {
+router.get('/all', (req, res) => {
     getAllMovies()
         .then(movies => res.send(movies))
         .catch(err => console.log(err));

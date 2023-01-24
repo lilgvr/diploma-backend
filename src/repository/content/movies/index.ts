@@ -1,7 +1,7 @@
-import { connection } from "../../db";
-import { DB_TABLES } from "../../db/types";
+import { connection } from "../../../db";
+import { DB_TABLES } from "../../../db/types";
 import { RowDataPacket } from "mysql2";
-import { Movie } from "../../types/model/Movie";
+import { Movie } from "../../../types/model/Movie";
 
 /**
  * Get all Movies from database
